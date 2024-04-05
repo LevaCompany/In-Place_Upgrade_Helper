@@ -438,5 +438,21 @@ set productname=Windows 10 Team
 set compositioneditionid=Enterprise
 goto mainmenu
 
+REM Windows Core
+:setvarcore
+set productkey=YTMG3-N6DKC-DKB77-7M9GH-8HVX7
+set editionid=Core
+set productname=Windows 10 Core
+set compositioneditionid=Core
+goto mainmenu
+
+REM Windows Core N
+:setvarcoren
+set productkey=4CPRK-NM3K3-X6XXQ-RXX86-WXCHW
+set editionid=Core
+set productname=Windows 10 Core N
+set compositioneditionid=CoreN
+goto mainmenu
+
 :endofbatch
 exit
