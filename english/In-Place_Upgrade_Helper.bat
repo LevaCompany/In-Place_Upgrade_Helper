@@ -48,6 +48,7 @@ echo Windows Enterprise                            Windows Pro
 echo Windows Enterprise multi-session              Windows Pro
 echo Windows IoT Enterprise                        Windows Pro
 echo Windows SE [Cloud] (Win11 only)               Windows Pro
+echo Windows Team                                  Windows Pro
 echo Windows Home                                  Windows Home
 echo Windows Home Single Language                  Windows Home
 echo Windows Pro N                                 Windows Pro N
@@ -55,7 +56,9 @@ echo Windows Pro N for Workstations                Windows Pro N
 echo Windows Education N                           Windows Pro N
 echo Windows Pro Education N                       Windows Pro N
 echo Windows Enterprise N                          Windows Pro N
-echo Windows SE [Cloud] N (Win11 only)             Windows Pro N
+echo Windows SE [Cloud] N (Win11 only)             Windows Pro N    
+echo Windows 10 Enterprise LTSC 2019               Windows 10 Enterprise LTSC 2019
+echo Windows 10 IoT Enterprise LTSC 2019           Windows 10 Enterprise LTSC 2019
 echo Windows 10 Enterprise LTSC 2021               Windows 10 Enterprise LTSC 2021
 echo Windows 10 IoT Enterprise LTSC 2021           Windows 10 Enterprise LTSC 2021
 echo Windows Server 2022 Standard                  Windows Server 2022 Standard
@@ -107,6 +110,9 @@ echo special editions, only available on separate installation media:
 echo 18) Windows 10 Enterprise LTSC 2021      21) Windows Server 2022 Standard
 echo 19) Windows 10 IoT Enterprise LTSC 2021  22) Windows Server 2022 Datacenter
 echo 20) Windows 10 Enterprise N LTSC 2021    
+echo 24) Windows 10 Enterprise LTSC 2019      
+echo 25) Windows 10 IoT Enterprise LTSC 2019
+echo 26) Windows 10 Enterprise N LTSC 2019
 echo.
 echo.
 echo k) Method 1) Try to install the selected key with slmgr (simple edition change without in-place upgrade)
@@ -142,6 +148,10 @@ if '%choice%'=='19' goto setvariotltsc2021
 if '%choice%'=='20' goto setvarltscn2021
 if '%choice%'=='21' goto setvarserv22std
 if '%choice%'=='22' goto setvarserv22data
+if '%choice%'=='23' goto setvarteam
+if '%choice%'=='24' goto setvarltsc2019
+if '%choice%'=='25' goto setvariotltsc2019
+if '%choice%'=='26' goto setvarltscn2019
 if '%choice%'=='u' goto runupgrade
 if '%choice%'=='U' goto runupgrade
 if '%choice%'=='k' goto keychange
@@ -380,6 +390,30 @@ set productname=Windows 10 Enterprise N LTSC 2021
 set compositioneditionid=EnterpriseSN
 goto mainmenu
 
+REM Windows 10 Enterprise LTSC 2019
+:setvarltsc2019
+set productkey=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+set editionid=EnterpriseS
+set productname=Windows 10 Enterprise LTSC 2019
+set compositioneditionid=EnterpriseS
+goto mainmenu
+
+REM Windows 10 IoT Enterprise LTSC 2019
+:setvariotltsc2019
+set productkey=QPM6N-7J2WJ-P88HH-P3YRH-YY74H
+set editionid=IoTEnterpriseS
+set productname=Windows 10 IoT Enterprise LTSC 2019
+set compositioneditionid=EnterpriseS
+goto mainmenu
+
+REM Windows 10 Enterprise N LTSC 2019
+:setvarltscn2019
+set productkey=2D7NQ-3MDXF-9WTDT-X9CCP-CKD8V
+set editionid=EnterpriseSN
+set productname=Windows 10 Enterprise N LTSC 2019
+set compositioneditionid=EnterpriseSN
+goto mainmenu
+
 REM Windows Server 2022 Standard / Standard with desktop experience
 :setvarserv22std
 set productkey=VDYBN-27WPP-V4HQT-9VMD4-VMK7H
@@ -394,6 +428,14 @@ set productkey=WX4NM-KYWYW-QJJR4-XV3QB-6VM33
 set editionid=ServerDatacenter
 set productname=Windows Server 2022 Datacenter
 set compositioneditionid=ServerDatacenter
+goto mainmenu
+
+REM Windows Team
+:setvarteam
+set productkey=XKCNC-J26Q9-KFHD2-FKTHY-KD72Y
+set editionid=PPIPro
+set productname=Windows 10 Team
+set compositioneditionid=Enterprise
 goto mainmenu
 
 :endofbatch
