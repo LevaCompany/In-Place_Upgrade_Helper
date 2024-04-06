@@ -63,6 +63,8 @@ echo Windows 10 Enterprise LTSC 2021               Windows 10 Enterprise LTSC 20
 echo Windows 10 IoT Enterprise LTSC 2021           Windows 10 Enterprise LTSC 2021
 echo Windows Server 2022 Standard                  Windows Server 2022 Standard
 echo Windows Server 2022 Datacenter                Windows Server 2022 Datacenter
+echo Windows Core                                  Windows Core
+echo Windows Core N                                Windows Core
 echo.
 echo Press any key to list available editions on the installation medium.
 pause>nul|set/p=&echo(
@@ -152,6 +154,8 @@ if '%choice%'=='23' goto setvarteam
 if '%choice%'=='24' goto setvarltsc2019
 if '%choice%'=='25' goto setvariotltsc2019
 if '%choice%'=='26' goto setvarltscn2019
+if '%choice%'=='27' goto setvarcore
+if '%choice%'=='28' goto setvarcoren
 if '%choice%'=='u' goto runupgrade
 if '%choice%'=='U' goto runupgrade
 if '%choice%'=='k' goto keychange
