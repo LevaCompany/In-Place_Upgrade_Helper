@@ -116,7 +116,8 @@ echo 5) Windows Pro Education                 14) Windows Pro Education N
 echo 6) Windows Education                     15) Windows Education N
 echo 7) Windows Enterprise multi-session      16) Windows Enterprise N
 echo 8) Windows IoT Enterprise                17) Windows 11 SE CloudEdition N
-echo 9) Windows Home Single Language
+echo 9) Windows Home Single Language          29) Windows Team 
+echo 30) Windows Core                         31) Windows Core N
 echo LTSC:
 echo 18) Windows 10 Enterprise LTSC 2021      22) Windows 11 IoT Enterprise LTSC 2024
 echo 19) Windows 10 IoT Enterprise LTSC 2021  23) Windows 11 Enterprise N LTSC 2024
@@ -163,11 +164,9 @@ if '%choice%'=='25' goto setvarserv22std
 if '%choice%'=='26' goto setvarserv22data
 if '%choice%'=='27' goto setvarserv25std
 if '%choice%'=='28' goto setvarserv25data
-
 if '%choice%'=='29' goto setvarteam
 if '%choice%'=='30' goto setvarcore
 if '%choice%'=='31' goto setvarcoren
-
 if '%choice%'=='u' goto runupgrade
 if '%choice%'=='U' goto runupgrade
 if '%choice%'=='k' goto keychange
